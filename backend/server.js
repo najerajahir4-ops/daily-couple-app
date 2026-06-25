@@ -8,25 +8,25 @@ if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
     console.log('📁 Carpeta "uploads" creada automáticamente.');
 }
+
 const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
 const bcrypt = require('bcrypt');
 const db = require('./database');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000; // Ajustado para tomar el puerto dinámico de Render
 
 // Configuración de Middlewares globales
 app.use(cors());
 app.use(express.json());
 // Hace pública la carpeta física para poder servir las imágenes cargadas
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(uploadsDir));
 
 // Reglas de almacenamiento en disco para Multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, 'uploads/'));
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
     // Evita duplicados agregando una marca de tiempo única al nombre del archivo
@@ -150,5 +150,5 @@ app.post('/api/preferences', (req, res) => {
 
 // Levantar el proceso del servidor
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
 });
