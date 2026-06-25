@@ -1,4 +1,13 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
+// Asegurar que la carpeta uploads exista en producción
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+    console.log('📁 Carpeta "uploads" creada automáticamente.');
+}
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
