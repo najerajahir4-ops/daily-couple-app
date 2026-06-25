@@ -1,0 +1,16 @@
+# Dependencias pesadas
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Archivos efímeros y base de datos local
+backend/dailycouple.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+.env
+
+# Producción frontend
+frontend/dist/
+dist/
+logs
+*.log

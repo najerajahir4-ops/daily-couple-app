@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    --bg-main: #FCFBF9;
+    --bg-card: #FFFFFF;
+    --text-main: #2C2A29;
+    --text-muted: #7A7571;
+    --border-color: #F1EFEA;
+    background-color: var(--bg-main);
+  }
+
+  h1, h2, h3, .font-elegant {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* --- PALETAS EXCLUSIVAS ASHLEY KATHERINE (Femenino Elegante) --- */
+  [data-theme='theme-ashley-pink'] {
+    --primary: #FFB6D9; /* Rosa pastel */
+    --primary-hover: #FFA2CE;
+    --secondary: #E91E63; /* Magenta suave */
+    --shadow-color: rgba(255, 182, 217, 0.25);
+  }
+  [data-theme='theme-ashley-purple'] {
+    --primary: #C77DFF; /* Lila */
+    --primary-hover: #B86Bf0;
+    --secondary: #B8A5E6; /* Violeta */
+    --shadow-color: rgba(199, 125, 255, 0.25);
+  }
+  [data-theme='theme-ashley-coral'] {
+    --primary: #FFB6A3; /* Melocotón */
+    --primary-hover: #FFA28B;
+    --secondary: #FF7F50; /* Coral */
+    --shadow-color: rgba(255, 182, 163, 0.25);
+  }
+  [data-theme='theme-ashley-mint'] {
+    --primary: #98D8C8; /* Mint Femenino */
+    --primary-hover: #82CBB9;
+    --secondary: #60A596;
+    --shadow-color: rgba(152, 216, 200, 0.25);
+  }
+  [data-theme='theme-ashley-gold'] {
+    --primary: #D4AF37; /* Dorado Elegante */
+    --primary-hover: #C5A02E;
+    --secondary: #F4E4C1;
+    --shadow-color: rgba(212, 175, 55, 0.2);
+  }
+
+  /* --- PALETAS EXCLUSIVAS KENNY (Neutral / Oscuro) --- */
+  [data-theme='theme-kenny-blue'] {
+    --primary: #1E3A8A; /* Azul Oscuro Profesional */
+    --primary-hover: #172E6C;
+    --secondary: #3B82F6;
+    --shadow-color: rgba(30, 58, 138, 0.15);
+  }
+  [data-theme='theme-kenny-dark'] {
+    --primary: #1F2937; /* Gris Oscuro Moderno */
+    --primary-hover: #111827;
+    --secondary: #4B5563;
+    --shadow-color: rgba(31, 41, 55, 0.15);
+  }
+  [data-theme='theme-kenny-green'] {
+    --primary: #064E3B; /* Verde Oscuro Minimalista */
+    --primary-hover: #043A2B;
+    --secondary: #10B981;
+    --shadow-color: rgba(6, 78, 59, 0.15);
+  }
+}
+
+/* Estilos estructurales con look orgánico y artesanal */
+.card-organic {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px -10px var(--shadow-color);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #2C2A29;
+  border-radius: 14px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+[data-theme^='theme-kenny'] .btn-primary {
+  color: #FFFFFF; /* Texto blanco adaptado para legibilidad en fondos oscuros de Kenny */
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
