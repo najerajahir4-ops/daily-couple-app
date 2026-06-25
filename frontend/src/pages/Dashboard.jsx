@@ -91,7 +91,7 @@ export default function Dashboard({ user, onLogout }) {
   const handleThemeChange = async (themeId) => {
     changeTheme(themeId);
     try {
-      await fetch('http://192.168.100.9:5000/api/preferences', {
+      await fetch('https://daily-couple-app.onrender.com/api/preferences', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario_id: user.id, color_tema: themeId })
@@ -139,7 +139,7 @@ export default function Dashboard({ user, onLogout }) {
 
   const fetchPhotos = async () => {
     try {
-      const res = await fetch('http://192.168.100.9:5000/api/photos');
+      const res = await fetch('https://daily-couple-app.onrender.com/api/photos');
       const data = await res.json();
       if (res.ok) setFotos(data);
     } catch (err) {
@@ -165,7 +165,7 @@ export default function Dashboard({ user, onLogout }) {
     formData.append('descripcion', descripcion);
 
     try {
-      const res = await fetch('http://192.168.100.9:5000/api/photos', {
+      const res = await fetch('https://daily-couple-app.onrender.com/api/photos', {
         method: 'POST',
         body: formData
       });
@@ -186,7 +186,7 @@ export default function Dashboard({ user, onLogout }) {
   const confirmDelete = async () => {
     if (!deleteConfirmation) return;
     try {
-      const res = await fetch(`http://192.168.100.9:5000/api/photos/${deleteConfirmation}`, {
+      const res = await fetch(`https://daily-couple-app.onrender.com/api/photos/${deleteConfirmation}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario_id: user.id })
@@ -426,7 +426,7 @@ export default function Dashboard({ user, onLogout }) {
                   style={{ animationDelay: `${0.4 + index * 0.04}s` }}
                 >
                   <div className="relative w-full aspect-square bg-neutral-900 flex items-center justify-center overflow-hidden cursor-pointer" onClick={() => setActiveLightbox(foto)}>
-                    <img src={`http://192.168.100.9:5000${foto.imagen_url}`} alt="Recuerdo" className="max-w-full max-h-full object-contain" />
+                    <img src={`https://daily-couple-app.onrender.com${foto.imagen_url}`} alt="Recuerdo" className="max-w-full max-h-full object-contain" />
                     <div className="absolute top-2 right-2 flex gap-1.5 opacity-0 hover:opacity-100 transition-opacity duration-200">
                       <button onClick={(e) => { e.stopPropagation(); setActiveLightbox(foto); }} className="p-2 bg-white/90 rounded-full text-gray-700 shadow-md"><FiMaximize2 size={12} /></button>
                       {foto.usuario_id === user.id && <button onClick={(e) => { e.stopPropagation(); setDeleteConfirmation(foto.id); }} className="p-2 bg-white/90 rounded-full text-red-600 shadow-md"><FiTrash2 size={12} /></button>}
@@ -458,7 +458,7 @@ export default function Dashboard({ user, onLogout }) {
             <button onClick={() => setActiveLightbox(null)} className="absolute top-4 right-4 text-white/70 hover:text-white bg-white/10 p-2.5 rounded-full backdrop-blur-md cursor-pointer z-50"><FiX size={20} /></button>
             <div className="w-full h-full max-w-6xl md:h-[85vh] bg-white rounded-none md:rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-3 shadow-2xl animate-pop-smooth">
               <div className="lg:col-span-2 bg-neutral-950 flex items-center justify-center relative p-3 h-[50vh] lg:h-full">
-                <img src={`http://192.168.100.9:5000${activeLightbox.imagen_url}`} alt="Visualización" className="max-w-full max-h-full object-contain" />
+                <img src={`https://daily-couple-app.onrender.com${activeLightbox.imagen_url}`} alt="Visualización" className="max-w-full max-h-full object-contain" />
               </div>
               <div className="lg:col-span-1 bg-white p-5 flex flex-col justify-between h-[40vh] lg:h-full">
                 <div className="space-y-4">

@@ -13,7 +13,7 @@ export default function Login({ onLoginSuccess }) {
 
     try {
       // Conexión apuntando a la IP local de tu computadora
-      const response = await fetch('http://192.168.100.9:5000/api/login', {
+      const response = await fetch('https://daily-couple-app.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
