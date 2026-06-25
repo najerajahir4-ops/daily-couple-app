@@ -1,97 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 @layer base {
   html {
     font-family: 'Poppins', sans-serif;
-    --bg-main: #FCFBF9;
-    --bg-card: #FFFFFF;
-    --text-main: #2C2A29;
-    --text-muted: #7A7571;
-    --border-color: #F1EFEA;
+    --bg-main: #FFFDFB;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --text-main: #3C333A;
+    --text-muted: #8C7E8A;
+    --border-color: #F5EEF4;
     background-color: var(--bg-main);
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, .font-elegant {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fredoka', sans-serif; /* Fuente tierna, redondeada y estética */
   }
 
-  /* --- PALETAS EXCLUSIVAS ASHLEY KATHERINE (Femenino Elegante) --- */
-  [data-theme='theme-ashley-pink'] {
-    --primary: #FFB6D9; /* Rosa pastel */
-    --primary-hover: #FFA2CE;
-    --secondary: #E91E63; /* Magenta suave */
-    --shadow-color: rgba(255, 182, 217, 0.25);
-  }
-  [data-theme='theme-ashley-purple'] {
-    --primary: #C77DFF; /* Lila */
-    --primary-hover: #B86Bf0;
-    --secondary: #B8A5E6; /* Violeta */
-    --shadow-color: rgba(199, 125, 255, 0.25);
-  }
-  [data-theme='theme-ashley-coral'] {
-    --primary: #FFB6A3; /* Melocotón */
-    --primary-hover: #FFA28B;
-    --secondary: #FF7F50; /* Coral */
-    --shadow-color: rgba(255, 182, 163, 0.25);
-  }
-  [data-theme='theme-ashley-mint'] {
-    --primary: #98D8C8; /* Mint Femenino */
-    --primary-hover: #82CBB9;
-    --secondary: #60A596;
-    --shadow-color: rgba(152, 216, 200, 0.25);
-  }
-  [data-theme='theme-ashley-gold'] {
-    --primary: #D4AF37; /* Dorado Elegante */
-    --primary-hover: #C5A02E;
-    --secondary: #F4E4C1;
-    --shadow-color: rgba(212, 175, 55, 0.2);
+  /* --- PALETAS ULTRA-PERSONALIZADAS ASHLEY KATHERINE --- */
+  [data-theme='theme-kuromi-goth'] {
+    --primary: #D6A3FB; /* Morado Kuromi */
+    --primary-hover: #C285F2;
+    --secondary: #FF66B2; /* Rosa Neón Kuromi */
+    --bg-main: #1A121A;   /* Modo Oscuro Mágico */
+    --bg-card: rgba(35, 22, 38, 0.9);
+    --text-main: #F5E6F5;
+    --text-muted: #A68FA3;
+    --border-color: #38243C;
+    --shadow-color: rgba(214, 163, 251, 0.3);
   }
 
-  /* --- PALETAS EXCLUSIVAS KENNY (Neutral / Oscuro) --- */
+  [data-theme='theme-kitty-pink'] {
+    --primary: #FFB7CA; /* Rosa Hello Kitty original */
+    --primary-hover: #FA9EB7;
+    --secondary: #FF4D79;
+    --bg-main: #FFF5F7;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --text-main: #4A2831;
+    --text-muted: #9C7881;
+    --border-color: #FFE0E6;
+    --shadow-color: rgba(255, 183, 202, 0.4);
+  }
+
+  [data-theme='theme-coquette-rose'] {
+    --primary: #F7D6C8; /* Melocotón Vintage Coquette */
+    --primary-hover: #EBC0B0;
+    --secondary: #C94A69; /* Lazo carmesí */
+    --bg-main: #FAF5F2;
+    --bg-card: #FFFFFF;
+    --text-main: #4A3E39;
+    --text-muted: #8F7E77;
+    --border-color: #F2E6E1;
+    --shadow-color: rgba(247, 214, 200, 0.3);
+  }
+
+  [data-theme='theme-neko-mint'] {
+    --primary: #A8E6CF; /* Gatito Mint Pastel */
+    --primary-hover: #91D7BD;
+    --secondary: #FF8B94;
+    --bg-main: #F4FAF7;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --text-main: #2D4038;
+    --text-muted: #6E857B;
+    --border-color: #E2F3EC;
+    --shadow-color: rgba(168, 230, 207, 0.3);
+  }
+
+  [data-theme='theme-royal-gold'] {
+    --primary: #E5C158; /* Oro Elegante Real */
+    --primary-hover: #D4AF37;
+    --secondary: #2C2C2C;
+    --bg-main: #FCFAF2;
+    --bg-card: #FFFFFF;
+    --text-main: #332F21;
+    --text-muted: #7A7256;
+    --border-color: #F5EFCF;
+    --shadow-color: rgba(229, 193, 88, 0.25);
+  }
+
+  /* --- PALETAS EXCLUSIVAS KENNY --- */
   [data-theme='theme-kenny-blue'] {
-    --primary: #1E3A8A; /* Azul Oscuro Profesional */
-    --primary-hover: #172E6C;
-    --secondary: #3B82F6;
-    --shadow-color: rgba(30, 58, 138, 0.15);
+    --primary: #2563EB; /* Azul Eléctrico */
+    --primary-hover: #1D4ED8;
+    --secondary: #60A5FA;
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --shadow-color: rgba(37, 99, 235, 0.15);
   }
   [data-theme='theme-kenny-dark'] {
-    --primary: #1F2937; /* Gris Oscuro Moderno */
-    --primary-hover: #111827;
-    --secondary: #4B5563;
-    --shadow-color: rgba(31, 41, 55, 0.15);
-  }
-  [data-theme='theme-kenny-green'] {
-    --primary: #064E3B; /* Verde Oscuro Minimalista */
-    --primary-hover: #043A2B;
-    --secondary: #10B981;
-    --shadow-color: rgba(6, 78, 59, 0.15);
+    --primary: #374151;
+    --primary-hover: #1F2937;
+    --secondary: #9CA3AF;
+    --bg-main: #111827;
+    --bg-card: #1F2937;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --border-color: #374151;
+    --shadow-color: rgba(0,0,0,0.5);
   }
 }
 
-/* Estilos estructurales con look orgánico y artesanal */
-.card-organic {
-  background-color: var(--bg-card);
+/* Efecto de Vidrio Esmerilado (Glassmorphism) */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
-  border-radius: 24px;
-  box-shadow: 0 12px 40px -10px var(--shadow-color);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px -15px var(--shadow-color);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: #2C2A29;
-  border-radius: 14px;
-  padding: 0.8rem 1.6rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.03);
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -10px var(--shadow-color);
 }
-[data-theme^='theme-kenny'] .btn-primary {
-  color: #FFFFFF; /* Texto blanco adaptado para legibilidad en fondos oscuros de Kenny */
+
+.btn-kawaii {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: var(--text-main);
+  border-radius: 18px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px -6px var(--shadow-color);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px var(--shadow-color);
+.btn-kawaii:hover {
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 12px 25px -4px var(--shadow-color);
+}
+
+/* Animación de partículas cayendo */
+@keyframes fall {
+  0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+.floating-particle {
+  position: fixed;
+  top: -5vh;
+  pointer-events: none;
+  z-index: 10;
+  animation: fall linear infinite;
 }
