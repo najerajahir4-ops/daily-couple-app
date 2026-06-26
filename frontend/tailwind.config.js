@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./frontend/src/**/*.{js,ts,jsx,tsx}" // 👈 ¡ESTA LÍNEA ES LA CLAVE!
   ],
   theme: {
     extend: {},
